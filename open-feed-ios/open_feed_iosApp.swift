@@ -1,17 +1,23 @@
-//
-//  open_feed_iosApp.swift
-//  open-feed-ios
-//
-//  Created by Ben Lackey on 6/19/25.
-//
-
 import SwiftUI
 
 @main
 struct open_feed_iosApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                PostView()
+                    .tabItem {
+                        Label("Post", systemImage: "pencil")
+                    }
+                FeedView()
+                    .tabItem {
+                        Label("Feed", systemImage: "book")
+                    }
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                    }
+            }
         }
     }
 }
